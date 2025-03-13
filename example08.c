@@ -1,13 +1,15 @@
 #include <stdio.h>
 
-int add(int a,int b) {
-	int c = a + b;
-	return c;
+void compute(int a,int b,int*padd,int*psub) {
+	*padd = a + b;
+	*psub = a - b;
 }
 
 int main(void) {
-	int a = 10; b = 20;
-	int c = add(a, b);
-	printf("add=%d\n", c);
+	int a = 10; 
+	int b = 20;
+	int add, sub;
+	compute(a, b,&add,&sub);
+	printf("add=%d,sub=%d\n", add,sub);
 	return 0;
 }
